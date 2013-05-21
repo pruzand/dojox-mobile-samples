@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport"
+		  content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<title>Your Application Name</title>
+	<link href="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojox/mobile/themes/iphone/iphone.css"
+		  rel="stylesheet"/>
+
+	<!-- stylesheet will go here -->
+	<style>
+			/* vertically center the image */
+		.tweetviewRefresh img {
+			margin-top: 6px;
+		}
+	</style>
+
+	<!-- dojo/javascript will go here -->
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"
+			data-dojo-config="async:true">
+	</script>
+	<script type="text/javascript">
+		// Load the widget parser and mobile base
+		require([
+			"dojox/mobile/parser",
+			"dojox/mobile",
+			"dojox/mobile/ScrollableView",
+			"dojox/mobile/TabBar",
+			"dojox/mobile/TabBarButton",
+			"dojox/mobile/deviceTheme"
+		], function (parser) {
+
+			// Parse the page for widgets!
+			parser.parse();
+
+		});
+	</script>
+	<style>
+			/* vertically center the image */
+		.tweetviewRefresh img   {
+			margin-top:6px;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="tweets" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props="selected:true">
+		<h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed: 'top'">
+			<div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="icon: 'images/refresh.png'"
+				 class="mblDomButton tweetviewRefresh" style="float:right;"></div>
+			Tweets
+		</h1>
+		<ul data-dojo-type="dojox.mobile.RoundRectList">
+			<li data-dojo-type="dojox.mobile.ListItem">
+				Tweet item here
+			</li>
+		</ul>
+	</div>
+
+	<div id="mentions" data-dojo-type="dojox.mobile.ScrollableView">
+		<h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed: 'top'">
+			<div data-dojo-type="dojox.mobile.ToolBarButton" data-dojo-props="icon: 'images/refresh.png'"
+				 class="mblDomButton tweetviewRefresh" style="float:right;"></div>
+			Mentions
+		</h1>
+		<ul data-dojo-type="dojox.mobile.RoundRectList">
+			<li data-dojo-type="dojox.mobile.ListItem">
+				Mention tweet item here
+			</li>
+		</ul>
+	</div>
+
+	<div id="settings" data-dojo-type="dojox.mobile.ScrollableView">
+		<h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed: 'top'">
+			Settings
+		</h1>
+		<h2 data-dojo-type="dojox.mobile.RoundRectCategory">
+			Show
+		</h2>
+		<ul data-dojo-type="dojox.mobile.RoundRectList">
+			<li data-dojo-type="dojox.mobile.ListItem">
+				Setting item here
+			</li>
+		</ul>
+	</div>
+
+	<ul data-dojo-type="dojox.mobile.TabBar" data-dojo-props="iconBase: 'images/iconStrip.png', fixed:'bottom'">
+		<li data-dojo-type="dojox.mobile.TabBarButton" data-dojo-props="iconPos1:'0,0,29,30', iconPos2:'29,0,29,30', selected:true, moveTo:'tweets'">
+			Tweets
+		</li>
+		<li data-dojo-type="dojox.mobile.TabBarButton" data-dojo-props="iconPos1:'0,0,29,30', iconPos2:'29,0,29,30', moveTo:'mentions'">
+			Mentions
+		</li>
+		<li data-dojo-type="dojox.mobile.TabBarButton" data-dojo-props="iconPos1:'0,0,29,30', iconPos2:'29,0,29,30', moveTo:'settings'">
+			Settings
+		</li>
+	</ul>
+</body>
+</html>
